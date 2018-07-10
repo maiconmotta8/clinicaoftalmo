@@ -2,7 +2,7 @@ import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
-public class Produto {
+public class CadastrarProduto {
 
 	FirefoxDriver pagina;
 	
@@ -25,5 +25,23 @@ public class Produto {
 			
 			WebElement produto = pagina.findElementByXPath("/html/body/header/a[2]/button");
 			produto.click();
+			
+			WebElement novoProduto = pagina.findElementByXPath("/html/body/a/button");
+			novoProduto.click();
+			
+			WebElement Nome = pagina.findElementByName("nome");
+			Nome.sendKeys("Paracetamol");
+			
+			WebElement  Preço = pagina.findElementByName("preco");
+			Preço.sendKeys("2,75");
+			
+			WebElement  Quantidade = pagina.findElementByName("quantidade");
+			Quantidade.sendKeys("20");
+			
+			WebElement  Categoria = pagina.findElementByName("categoria");
+			Categoria.sendKeys("Remedio");
+			
+			WebElement  Salvar = pagina.findElementByXPath("/html/body/form/input[5]");
+			Salvar.click();
 	}
 }
