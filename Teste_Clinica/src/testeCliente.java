@@ -51,16 +51,23 @@ FirefoxDriver pagina;
 		
 		WebElement senha2 = pagina.findElementByName("senha2");
 		senha2.sendKeys("123");
-		
+			
 		WebElement salvar = pagina.findElementByXPath("/html/body/form/input[8]");
 		salvar.click();
+
+		WebElement btnEditar = pagina.findElementByXPath("/html/body/table/tbody/tr[2]/td[6]/a/button");
+		btnEditar.click();
+		
+		WebElement btnExcluir = pagina.findElementByXPath("/html/body/table/tbody/tr[2]/td[7]/a/button");
+		btnExcluir.click();
 		
 	}
 
-//	@After
-//	public void depois() {
-//		WebElement sair = pagina.findElementByXPath("/html/body/header/a[6]/button");
-//		sair.click();
-//		
+	@After
+	public void depois() {
+		WebElement sair = pagina.findElementByXPath("/html/body/header/a[6]/button");
+		sair.click();
+		
 	}
 	
+}

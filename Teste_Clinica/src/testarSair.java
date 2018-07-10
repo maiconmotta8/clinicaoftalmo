@@ -1,14 +1,13 @@
-import javax.swing.JOptionPane;
-
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
-public class testeCategoria {
+public class testarSair {
 
-	FirefoxDriver pagina;
+	
+FirefoxDriver pagina;
 	
 	@Before
 	public void antes() {
@@ -26,31 +25,23 @@ public class testeCategoria {
 		WebElement entrar = pagina.findElementByXPath("/html/body/header/form/input[3]");
 		entrar.click();
 		
-				
 	}
-
+	
+	
 	@Test
 	public void test() {
+		WebElement btnSair = pagina.findElementByXPath("/html/body/header/a[6]/button");
+		btnSair.click();
 		
-				
-		WebElement btnCategoria = pagina.findElementByXPath("/html/body/header/a[3]/button");
-		btnCategoria.click();
-				
-		WebElement nome = pagina.findElementByXPath("/html/body/form/input[1]");
-		nome.sendKeys("Bala");
-		
-		WebElement btnSalvar = pagina.findElementByXPath("/html/body/form/input[2]");
-		btnSalvar.click();
-		
-		WebElement btnExcluir = pagina.findElementByXPath("/html/body/table/tbody/tr[2]/td[3]/a/button");
-		btnExcluir.click();
 		
 	}
 
-	
 	@After
-	public void depois( ) {
-		WebElement sair = pagina.findElementByXPath("/html/body/header/a[6]/button");
-		sair.click();
+	public void depois() {
+//		WebElement sair = pagina.findElementByXPath("/html/body/header/a[6]/button");
+//		sair.click();
+		
 	}
+	
+	
 }
