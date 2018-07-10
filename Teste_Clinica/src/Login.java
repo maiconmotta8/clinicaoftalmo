@@ -2,6 +2,7 @@
 
 import javax.swing.JOptionPane;
 
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.WebElement;
@@ -36,9 +37,18 @@ public class Login {
 		entrar.click();
 		
 		
-		JOptionPane.showMessageDialog(null,  "TESTE OK");
+		//JOptionPane.showMessageDialog(null,  "TESTE OK");
 	
 		
 	}
-
+	@After
+	public void depois() {
+	WebElement header = pagina.findElementByXPath("/html/body/header");
+	
+	if ( header.getText().contains("Toshi")) {
+		JOptionPane.showMessageDialog(null,  "TESTE OK");
+	}else {
+		JOptionPane.showMessageDialog(null,  "TESTE FALHA");
+}
+	}
 }
