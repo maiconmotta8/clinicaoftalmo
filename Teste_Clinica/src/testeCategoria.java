@@ -1,5 +1,6 @@
 import javax.swing.JOptionPane;
 
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.WebElement;
@@ -31,13 +32,22 @@ public class testeCategoria {
 	@Test
 	public void test() {
 		
-		
-		
+				
 		WebElement btnCategoria = pagina.findElementByXPath("/html/body/header/a[3]/button");
 		btnCategoria.click();
+				
+		WebElement nome = pagina.findElementByXPath("/html/body/form/input[1]");
+		nome.sendKeys("Bala");
 		
+		WebElement btnSalvar = pagina.findElementByXPath("/html/body/form/input[2]");
+		btnSalvar.click();
 		
-
 	}
 
+	
+	@After
+	public void depois( ) {
+		WebElement sair = pagina.findElementByXPath("/html/body/header/a[6]/button");
+		sair.click();
+	}
 }
